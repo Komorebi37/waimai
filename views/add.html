@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="right">
+        <div class="location">
+            <strong>你现在所在的位置是:</strong>
+            <span>订单管理页面 >> 订单信息增加页面</span>
+        </div>
+    <form action="/order/add" method="POST">
+        <input type="hidden" name="id"  placeholder="请填写ID"  /><br/>
+        <input type="text" name="dorder"  placeholder="dorder"/>
+        <br/>
+        <input type="text" name="quantity"  placeholder="quantity"/>
+        <br/>
+        <input type="text" name="time" placeholder="time"/>
+        <br/>
+        <input type="text" name="name"  placeholder="name"/>
+        <br/>
+        <input type="text" name="phone"  placeholder="phone"/>
+        <br/>
+        <input type="text" name="email"  placeholder="email"/>
+        <br/>
+        <input type="text" name="address"  placeholder="address"/>
+        <br/>
+        <input type="text" name="contact"  placeholder="contact"/>
+        <br/>
+        <input type="submit"/>
+    </form>
+    <script type="text/javascript" src="/javascripts/add.js"></script>
+</body>
+</html>

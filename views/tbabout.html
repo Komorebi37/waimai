@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>厨师表</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/Table.css">
+	<script src="/javascripts/jquery-3.6.0.min.js"></script>
+	<script src="/javascripts/jq.js"></script>
+	
+</head>
+<body> 
+	<table>
+		<thead>
+			<tr>
+				<td colspan="5">
+					<input type="button" value="新增" id="add2_button"/>
+					<form action="/tbabout" method="post">
+						<input type="text" name="sea" placeholder="搜索">
+						<input type="submit">
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>id</td>
+				<td>name</span></td>
+				<td>photo<span class="upBtn"></span><span class="downBtn"></td>
+			    <td>introduce</td>
+				<td>按钮</td>
+			</tr>
+		</thead>
+		<tbody id="showdata">
+			<% for(var o of data){ %>
+				<tr>
+					<td><%=o.id %></td>
+					<td><%=o.name %></td>
+					<td><%=o.photo %></td>
+			        <td><%=o.introduce %></td>
+                    
+				<td>
+						<input data-id="<%=o.id %>" type="button" value="删除" class="del2_button"/>
+					    <input data-id="<%=o.id %>"  type="button" value="修改" class="upd2_button"/></td>
+				</tr>
+				<% } %>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5">
+					<input type ="button" value="上一页" id="lastpage"/>
+					<input type ="button" value="下一页" id="nextpage"/>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	<script type="text/javascript" src="/javascripts/Table.js"></script>
+	<script>
+		Array.from(document.getElementsByClassName("del2_button")).forEach(i=>{
+    i.onclick = function(){
+        let ind = this.getAttribute("data-id");
+        window.location.href = '/tbabout/del/'+ind;
+    }
+})
+
+document.getElementById("add2_button").onclick = function(){
+    window.location.href='/tbabout/addpage';
+}
+
+
+Array.from(document.getElementsByClassName("upd2_button")).forEach(i=>{
+    i.onclick = function(){
+        let ind = this.getAttribute("data-id"); 
+        window.location.href = '/tbabout/updateabout/'+ind;
+    }
+})
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>菜品表</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/Table.css">
+	<script src="/javascripts/jquery-3.6.0.min.js"></script>
+	<script src="/javascripts/jq.js"></script>
+	
+</head>
+<body> 
+
+	<table>
+		<thead>
+			<tr>
+				<td colspan="8">
+					<input type="button" value="新增" id="add1_button"/><br>
+					<form action="/tbindex" method="post">
+						<input type="text" name="sea" placeholder="搜索">
+						<input type="submit">
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>id</td>
+				<td>photo</span></td>
+				<td>title<span class="upBtn"></span><span class="downBtn"></td>
+				<td>cookTime<span class="upBtn"></span><span class="downBtn"></td>
+				<td>price<span class="upBtn"></span><span class="downBtn"></td>
+				<td>order<span class="upBtn"></span><span class="downBtn"></td>
+				<td>introduce</td>
+				<td>按钮</td>
+			</tr>
+		</thead>
+		<tbody id="showdata">
+			<% for(var d of data){ %>
+				<tr>
+					<td><%=d.id %></td>
+					<td><%=d.photo %></td>
+					<td><%=d.title %></td>
+					<td><%=d.cookTime %></td>
+					<td><%=d.price %></td>
+					<td><%=d.dorder %></td>
+                    <td><%=d.introduce %></td>
+                    
+				<td>
+						<input data-id="<%=d.id %>" type="button" value="删除" class="del1_button"/>
+					    <input data-id="<%=d.id %>"  type="button" value="修改" class="upd1_button"/></td>
+				</tr>
+				<% } %>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="8">
+					<input type ="button" value="上一页" id="lastpage"/>
+					<input type ="button" value="下一页" id="nextpage"/>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	<script type="text/javascript" src="/javascripts/Table.js"></script>
+	<script src="/javascripts/task1.js"></script>
+
+</body>
+</html>

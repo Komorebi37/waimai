@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点餐信息表格</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/Table.css">
+	<script src="/javascripts/jquery-3.6.0.min.js"></script>
+	<script src="/javascripts/jq.js"></script>
+	
+</head>
+<body> 
+	<table>
+		<thead>
+			<tr>
+				<td colspan="10">
+					<input type="button" value="新增" id="add_button"/>
+					<form action="/order" method="post">
+						<input type="text" name="sea" placeholder="搜索">
+						<input type="submit">
+					</form>
+				</td>
+			</tr>
+			<tr>
+				<td>id</td>
+				<td>order</span></td>
+				<td>quantity<span class="upBtn"></span><span class="downBtn"></td>
+				<td>time<span class="upBtn"></span><span class="downBtn"></td>
+				<td>name<span class="upBtn"></span><span class="downBtn"></td>
+				<td>phone<span class="upBtn"></span><span class="downBtn"></td>
+				<td>email<span class="upBtn"></span><span class="downBtn"></td>
+				<td>address<span class="upBtn"></span><span class="downBtn"></td>
+				<td>contact<span class="upBtn"></span><span class="downBtn"></td>
+				<td>按钮</td>
+				
+			</tr>
+		</thead>
+		<tbody id="showdata">
+			<% for(var o of data){ %>
+				<tr>
+					<td><%=o.id %></td>
+					<td><%=o.dorder %></td>
+					<td><%=o.quantity %></td>
+					<td><%=o.time %></td>
+					<td><%=o.name %></td>
+					<td><%=o.phone %></td>
+					<td><%=o.email %></td>
+					<td><%=o.address %></td>
+					<td><%=o.contact %></td>
+					<td>
+						<input data-id="<%=o.id %>" type="button" value="删除" class="del_button"/>
+						<input data-id="<%=o.id %>"  type="button" value="修改" class="upd_button"/></td>
+				</tr>
+				<% } %>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="10">
+					<input type ="button" value="上一页" id="lastpage"/>
+					<input type ="button" value="下一页" id="nextpage"/>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	<script type="text/javascript" src="/javascripts/Table.js"></script>
+	<script src="/javascripts/task.js"></script>
+
+</body>
+</html>

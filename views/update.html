@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="right">
+        <div class="location">
+            <strong>你现在所在的位置是:</strong>
+            <span>订单管理页面 >> 订单信息修改页面</span>
+        </div>
+    <form action="/order/update" method="POST">
+        <input type="hidden" name="id"  placeholder="请填写ID" value="<%=obj.id%>"  /><br/>
+        <input type="text" name="dorder"  placeholder="dorder" value="<%=obj.dorder%>"/>
+        <br/>
+        <input type="text" name="quantity"  placeholder="quantity" value="<%=obj.quantity%>"/>
+        <br/>
+        <input type="text" name="time" placeholder="time" value="<%=obj.time%>"/>
+        <br/>
+        <input type="text" name="name"  placeholder="name" value="<%=obj.name%>"/>
+        <br/>
+        <input type="text" name="phone"  placeholder="phone" value="<%=obj.phone%>"/>
+        <br/>
+        <input type="text" name="email"  placeholder="email" value="<%=obj.email%>"/>
+        <br/>
+        <input type="text" name="address"  placeholder="address" value="<%=obj.address%>"/>
+        <br/>
+        <input type="text" name="contact"  placeholder="contact" value="<%=obj.contact%>"/>
+        <br/>
+        <input type="submit"/>
+    </form>
+</body>
+</html>
