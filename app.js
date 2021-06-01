@@ -19,6 +19,7 @@ var singlepostRouter = require('./routes/singlepost');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
 var orderRouter =require('./routes/order');
+var shopRouter =require('./routes/shop');
 
 var tbindexRouter =require('./routes/tbindex');
  var tbaboutRouter =require('./routes/tbabout');
@@ -66,6 +67,7 @@ app.use('/order',orderRouter);
 app.use('/tbindex',tbindexRouter);
 app.use('/tbabout',tbaboutRouter);
 app.use('/tbblog',tbblogRouter);
+app.use('/shop',shopRouter);
 
 
 
