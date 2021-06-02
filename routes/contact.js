@@ -16,15 +16,15 @@ router.get('/', function (req, res) {
 
 router.post('/', (req, res) => {
 
-    var insertSql = 'insert into order(order,quantity,time,name,phone,email,address,contact) values(?,?,?,?,?,?,?,?)';
-    connection.query(insertSql, [req.body.select,req.body.quantity,req.body.time,req.body.name,req.body.phone,req.body.email,req.body.address,req.body.contact], function (err, result, fields) {
+    var insertSql = 'insert into tab_order(dorder,quantity,time,name,phone,email,address,contact) values(?,?,?,?,?,?,?,?)';
+    connection.query(insertSql, [req.body.dorder,req.body.quantity,req.body.time,req.body.name,req.body.phone,req.body.email,req.body.address,req.body.contact], function (err, result, fields) {
     
         if (err) {
             console.log('err', err);
             return;
         } else {
            
-            res.redirect('/index');
+            res.redirect('/');
         }
    });
     });

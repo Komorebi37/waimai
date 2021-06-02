@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
             return;
         } else {
            
-            res.redirect('/index');
+            res.redirect('/');
         }
  });
     });
