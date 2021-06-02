@@ -47,9 +47,16 @@ router.post('/', function (req, res, next) {
     if (err) {
       console.log('err', err);
       return;
-    } else { res.render('tbindex', { data: result }); }
+    } else { 
+      if (result == '') {
+        res.send('没有此类产品哟！');
+    }
+    else{
+      res.render('tbindex', { data: result }); }
+    }
 });
 });
+
 
 
 router.get('/del/:id',(req,res) => {
@@ -60,7 +67,7 @@ router.get('/del/:id',(req,res) => {
   });
 
 router.get('/updateindex/:id',(req,res)=>{
-  connection.query("select * from dish where id= ?",[req.params.id],(err,result)=>{
+  connection.query("select * from dish where id= ? ",[req.params.id],(err,result)=>{
 res.render('updateindex',{obj:result[0]});
 })
 });
@@ -76,5 +83,6 @@ router.post('/updateindex',(req,res) =>{
   }
 });
 });
+
 
 module.exports = router;

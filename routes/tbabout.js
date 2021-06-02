@@ -48,14 +48,22 @@ router.post('/', function (req, res, next) {
     if (err) {
       console.log('err', err);
       return;
-    } else { res.render('tbabout', { data: result }); }
+    } else { 
+      if (result == '') {
+        res.send('没有这位厨师哟！');
+    }
+    else{
+      res.render('tbabout', { data: result }); }
+    }
 });
 });
+
 
 
 router.get('/del/:id',(req,res) => {
 
       connection.query("delete from cooker where id='"+req.params.id+"'",function(){
+        
       res.redirect('/tbabout')
     })
   });

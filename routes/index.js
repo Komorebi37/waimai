@@ -19,6 +19,12 @@ router.get('/', function (req, res, next) {
     });
 });
 
+// router.get('/shop:id'),(req,res)=>{
+// connection.query("update dish set flip =" +(result[0].flip +1)+"where id ="+req.params.id),(err,result)=>{
+//     res.render('index',{data:result[0]});
+//     }
+// }
+
 
 
 
