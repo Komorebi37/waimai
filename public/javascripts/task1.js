@@ -16,3 +16,7 @@ Array.from(document.getElementsByClassName("upd1_button")).forEach(i=>{
         window.location.href = '/tbindex/updateindex/'+ind;
     }
 })
+
+document.getElementById('nextpage').onclick = function(){
+    window.location.href="/tbindex/nextpage";
+};

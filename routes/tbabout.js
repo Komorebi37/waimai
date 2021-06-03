@@ -85,5 +85,13 @@ router.post('/updateabout',(req,res) =>{
   }
 });
 });
+router.get('/nextpage', function (req, res, next) {
+  connection.query("select * from cooker order by id desc limit 3,6", function (err, result, fields) {
+      if (err) {
+          console.log('err', err);
+          
+        } else { res.render('tbabout', { data: result }); }
+      });
+      });
 
 module.exports = router;

@@ -20,3 +20,8 @@ Array.from(document.getElementsByClassName("upd_button")).forEach(i=>{
         window.location.href = '/order/update/'+ind;
     }
 })
+
+
+document.getElementById('nextpage').onclick = function(){
+    window.location.href="/order/nextpage";
+};
