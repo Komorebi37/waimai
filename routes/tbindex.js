@@ -92,6 +92,15 @@ router.get('/nextpage', function (req, res, next) {
         } else { res.render('tbindex', { data: result }); }
       });
       });
+      router.get('/lastpage', function (req, res, next) {
+        connection.query("select * from dish order by id desc limit 0,3", function (err, result, fields) {
+            if (err) {
+                console.log('err', err);
+                
+              } else { res.render('tbindex', { data: result }); }
+            });
+            });
+      
 
 
 module.exports = router;

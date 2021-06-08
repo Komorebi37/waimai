@@ -13,6 +13,11 @@
 		<thead>
 			<tr>
 				<td colspan="5">
+					<div>
+						<a href="/local">
+							<img src="/images/icon_order.png" width="16" height="16" /></b>
+							<span class="a">后台管理页面</span>
+						</a></div>
 					<input type="button" value="新增" id="add2_button"/>
 					<form action="/tbabout" method="post">
 						<input type="text" name="sea" placeholder="搜索">
@@ -73,6 +78,9 @@ Array.from(document.getElementsByClassName("upd2_button")).forEach(i=>{
 })
 document.getElementById('nextpage').onclick = function(){
     window.location.href="/tbabout/nextpage";
+};
+document.getElementById('lastpage').onclick = function(){
+    window.location.href="/tbabout/lastpage";
 };
 	</script>
 

@@ -92,6 +92,16 @@ router.get('/nextpage', function (req, res, next) {
         } else { res.render('tbblog', { data: result }); }
       });
       });
+      router.get('/nextpage', function (req, res, next) {
+        connection.query("select * from moredish order by id desc limit 0,3", function (err, result, fields) {
+            if (err) {
+                console.log('err', err);
+                
+              } else { res.render('tbblog', { data: result }); }
+            });
+            });
+      
+      
 
 
 

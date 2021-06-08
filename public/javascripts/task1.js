@@ -20,3 +20,6 @@ Array.from(document.getElementsByClassName("upd1_button")).forEach(i=>{
 document.getElementById('nextpage').onclick = function(){
     window.location.href="/tbindex/nextpage";
 };
+document.getElementById('lastpage').onclick = function(){
+    window.location.href="/tbindex/lastpage";
+};

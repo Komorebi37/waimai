@@ -13,6 +13,11 @@
 		<thead>
 			<tr>
 				<td colspan="6">
+					<div>
+						<a href="/local">
+							<img src="/images/icon_order.png" width="16" height="16" /></b>
+							<span class="a">后台管理页面</span>
+						</a></div>
 					<input type="button" value="新增" id="add3_button"/>
 					<form action="/tbblog" method="post">
 						<input type="text" name="sea" placeholder="搜索">
@@ -76,6 +81,9 @@ Array.from(document.getElementsByClassName("upd3_button")).forEach(i=>{
 })
 document.getElementById('nextpage').onclick = function(){
     window.location.href="/tbblog/nextpage";
+};
+document.getElementById('lastpage').onclick = function(){
+    window.location.href="/tbblog/lastpage";
 };
 	</script>
 

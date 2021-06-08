@@ -25,3 +25,6 @@ Array.from(document.getElementsByClassName("upd_button")).forEach(i=>{
 document.getElementById('nextpage').onclick = function(){
     window.location.href="/order/nextpage";
 };
+document.getElementById('lastpage').onclick = function(){
+    window.location.href="/order/lastpage";
+};

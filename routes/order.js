@@ -81,6 +81,17 @@ router.get('/del/:id',(req,res) => {
         });
   
   
+        router.get('/lastpage', function (req, res, next) {
+          connection.query("select * from tab_order order by id desc limit 0,3", function (err, result, fields) {
+              if (err) {
+                  console.log('err', err);
+                  
+                } else { res.render('order', { data: result }); }
+              });
+              });
+        
+        
+      
 
 
 

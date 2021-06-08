@@ -10,9 +10,15 @@
 </head>
 <body> 
 	<table>
+		
 		<thead>
 			<tr>
 				<td colspan="10">
+					<div>
+					<a href="/local">
+						<img src="/images/icon_order.png" width="16" height="16" /></b>
+						<span class="a">后台管理页面</span>
+					</a></div>
 					<input type="button" value="新增" id="add_button"/>
 					<form action="/order" method="post">
 						<input type="text" name="sea" placeholder="搜索">
@@ -27,9 +33,9 @@
 				<td>time</td>
 				<td>name</td>
 				<td>phone</td>
-				<td>email</td>
+				<!-- <td>email</td>
 				<td>address</td>
-				<td>contact</td>
+				<td>contact</td> -->
 				<td>按钮</td>
 				
 			</tr>
@@ -43,9 +49,9 @@
 					<td><%=o.time %></td>
 					<td><%=o.name %></td>
 					<td><%=o.phone %></td>
-					<td><%=o.email %></td>
+					<!-- <td><%=o.email %></td>
 					<td><%=o.address %></td>
-					<td><%=o.contact %></td>
+					<td><%=o.contact %></td> -->
 					<td>
 						<input data-id="<%=o.id %>" type="button" value="删除" class="del_button"/>
 						<input data-id="<%=o.id %>"  type="button" value="修改" class="upd_button"/></td>
